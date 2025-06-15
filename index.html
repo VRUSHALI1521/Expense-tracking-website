@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Expense Tracker</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="summary">+
+            <div class="summary-card">
+                <h3>Total Expenses</h3>
+                <div class="amount total-expenses">₹0</div>
+            </div>
+            <div class="summary-card">
+                <h3>Total Budget</h3>
+                <div class="amount total-budget">₹0</div>
+                
+            </div>
+            <div class="summary-card">
+                <h3>Remaining Budget</h3>
+                <div class="amount remaining-budget">₹0</div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-column">
+                <div class="budget-form">
+                    <h2>Set Monthly Budget</h2>
+                    <div class="form-group">
+                        <label for="budget">Budget Amount (₹)</label>
+                        <input type="number" id="budget" min="0" step="0.01" placeholder="Enter your budget">
+                    </div>
+                    <button id="setBudget" class="btn btn-primary">Set Budget</button>
+                </div>
+
+                <div class="expense-form">
+                    <h2>Add New Expense</h2>
+                    <div class="form-group">
+                        <label for="expenseName">Expense Name</label>
+                        <input type="text" id="expenseName" placeholder="Enter expense name">
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseAmount">Amount (₹)</label>
+                        <input type="number" id="expenseAmount" min="0" step="0.01" placeholder="Enter amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseCategory">Category</label>
+                        <select id="expenseCategory"><div class=""></div>
+                            <option value="Food">Food</option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Housing">Housing</option>
+                            <option value="Utilities">Utilities</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Room">Room</option>
+                            <option value="Clothes">Clothes</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Education">Education</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseDate">Date</label>
+                        <input type="date" id="expenseDate">
+                    </div>
+                    <button id="addExpense" class="btn btn-primary">Add Expense</button>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="expense-list">
+                    <h2>Recent Expenses</h2>
+                    <div id="expensesList">
+                        <div class="no-expenses">No expenses added yet.</div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h2 class="chart-title">Expenses by Category</h2>
+                    <div id="expensesChart" class="chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
